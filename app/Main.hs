@@ -1,4 +1,8 @@
 module Main where
 
+import System.Random
+
 main :: IO ()
-main = putStrLn "Hello, Haskell!"
+main = randomRIO(1,20) >>= (putStrLn.("The d20 result is "++).show :: Int -> IO ())
+
+
